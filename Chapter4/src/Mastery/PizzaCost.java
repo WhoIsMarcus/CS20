@@ -1,5 +1,15 @@
-//Exercise 2 
+/*
 
+Program: ????.java          Last Date of this Revision: September 30, 2019
+
+Purpose: 
+
+Author: Your Name, 
+School: CHHS
+Course: Computer Programming ??
+ 
+
+*/
 package Mastery;
 
 import java.util.Scanner;
