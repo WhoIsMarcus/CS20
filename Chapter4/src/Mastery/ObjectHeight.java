@@ -1,4 +1,14 @@
-// Exercise 1
+/*
+
+Program: ObjectHeight.java          Last Date of this Revision: March 31, 2026
+
+Purpose: 
+Calculate the height of an object above the ground based off of time elapsed
+Author: Marcus McCrea, 
+School: CHHS
+Course: Computer Programming 20
+
+*/
 
 package Mastery;
 

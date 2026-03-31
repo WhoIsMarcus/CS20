@@ -1,12 +1,13 @@
 /*
 
-Program: ????.java          Last Date of this Revision: September 30, 2019
+Program: PizzaCost.java          Last Date of this Revision: September 30, 2019
 
 Purpose: 
+Calculate the cost of pizza based on Materials, size of pizza, and labor costs 
 
 Author: Your Name, 
 School: CHHS
-Course: Computer Programming ??
+Course: Computer Programming 20
  
 
 */
