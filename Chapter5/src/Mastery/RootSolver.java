@@ -52,7 +52,8 @@ public class RootSolver {
             System.out.println("The equation has no real roots.");
         }
 
-        scanner.close();
+        scanner.close(); //close scanner
+        
     }
 }
 

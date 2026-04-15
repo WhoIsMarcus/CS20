@@ -59,7 +59,7 @@ public class MathTutor {
             System.out.printf("Incorrect. The correct answer is %.2f%n", correctAnswer);
         }
 
-        scanner.close();
+        scanner.close(); //close scanner
     }
 }
 
