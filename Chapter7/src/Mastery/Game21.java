@@ -71,3 +71,41 @@ public class Game21 {
         input.close();
     }
 }
+
+
+/*
+Screen Dump: 
+--- Your Turn ---
+Cards: 5 9  | Score: 14
+Do you want a third card? (yes/no): yes
+Cards: 5 9 7  | Score: 21
+
+--- Computer ---
+Cards: 6 10  | Score: 16
+
+--- Result ---
+You win!
+
+Play again? (yes/no): no
+
+
+
+
+--- Your Turn ---
+Cards: 3 10  | Score: 13
+Do you want a third card? (yes/no): yes
+Cards: 3 10 11  | Score: 14
+
+--- Computer ---
+Cards: 10 8  | Score: 18
+
+--- Result ---
+Computer wins.
+
+Play again? (yes/no): no
+
+*/
+
+		
+		
+		
