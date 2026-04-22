@@ -2,68 +2,59 @@ package gettingstarted.advanced;
 
 import gettingstarted.PhidgetManager;
 import java.util.Arrays;
+import java.util.Random;
 
 public class AdvancedPhidgets {
 
     static double[] highScores = {999, 999, 999};
 
     public static void run() throws Exception {
-
         reactionTimer();
         leaderboard();
     }
 
     static void reactionTimer() throws Exception {
-
-        int countdown = 3;
+        // Use a random delay so the player can't predict the "GO" signal
+        int countdown = 2000 + new Random().nextInt(3000); 
         boolean started = false;
-        boolean gameOver = false;
         long startTime = 0;
 
-        while (!gameOver) {
+        System.out.println("Wait for it...");
 
-            System.out.println("Countdown: " + countdown);
+        while (true) {
+            // 1. Check for Early Press
+            if (!started && PhidgetManager.redButton.getState()) {
+                System.out.println("TOO EARLY! Disqualified.");
+                return;
+            }
 
-            // 🔥 GO SIGNAL
-            if (countdown == 0 && !started) {
-
+            // 2. Handle the "GO" Signal
+            if (!started && countdown <= 0) {
                 System.out.println("GO!");
-
                 PhidgetManager.greenLED.setState(true);
-                Thread.sleep(300);
-                PhidgetManager.greenLED.setState(false);
-
                 startTime = System.currentTimeMillis();
                 started = true;
             }
 
-            // early press = fail
-            if (!started && PhidgetManager.redButton.getState()) {
-                System.out.println("TOO EARLY!");
-                return;
-            }
-
-            // reaction press
+            // 3. Handle the Reaction Press
             if (started && PhidgetManager.redButton.getState()) {
-
                 double time = (System.currentTimeMillis() - startTime) / 1000.0;
-
-                System.out.println("Reaction Time: " + time);
-
+                PhidgetManager.greenLED.setState(false); // Turn off LED on press
+                System.out.println("Reaction Time: " + time + "s");
                 addScore(time);
-
-                gameOver = true;
+                break; // Game Over
             }
 
-            countdown--;
-            Thread.sleep(1000);
+            // 4. THE FIX: Small sleep (1ms) keeps the loop "tight" and responsive
+            Thread.sleep(1);
+            if (!started) {
+                countdown--;
+            }
         }
     }
 
     static void leaderboard() {
-
         Arrays.sort(highScores);
-
         System.out.println("\n--- TOP TIMES ---");
         for (double t : highScores) {
             if (t != 999) System.out.println(t + "s");
@@ -71,12 +62,10 @@ public class AdvancedPhidgets {
     }
 
     static void addScore(double t) {
-
-        for (int i = 0; i < highScores.length; i++) {
-            if (t < highScores[i]) {
-                highScores[i] = t;
-                break;
-            }
+        // Find the worst score (the highest one) and replace it if new time is better
+        Arrays.sort(highScores); 
+        if (t < highScores[2]) {
+            highScores[2] = t;
         }
     }
 }
