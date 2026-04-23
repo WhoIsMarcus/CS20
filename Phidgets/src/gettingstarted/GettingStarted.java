@@ -30,13 +30,13 @@ public class GettingStarted {
             lastRed = red;
             lastGreen = green;
 
-            // 🔴 Cycle menu
+            //  Cycle menu
             if (redPress) {
                 menu = (menu + 1) % 4;
                 showMenu();
             }
 
-            // 🟢 Select menu
+            //  Select menu
             if (greenPress) {
                 run(menu);
                 showMenu();
