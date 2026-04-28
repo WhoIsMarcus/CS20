@@ -25,19 +25,19 @@ public class SmartPhidgets {
             lastR = r;
             lastG = g;
 
-            // 🔴 cycle menu
+        
             if (rPress) {
                 option = (option + 1) % 3;
                 showMenu();
             }
 
-            // 🟢 select option
+           
             if (gPress) {
                 runLesson(option);
                 showMenu(); // return after finishing
             }
 
-            // 🔥 back to main menu
+            
             if (r && g) return;
 
             Thread.sleep(150);
