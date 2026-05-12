@@ -1,4 +1,4 @@
-package simulation;
+
 
 import javax.swing.*;
 
