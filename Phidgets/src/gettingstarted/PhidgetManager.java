@@ -1,3 +1,15 @@
+/*
+
+Program: AdvancedPhidgets.java          Last Date of this Revision: March 31, 2026
+
+Purpose: this is the main hud to choose which thing you would like to do
+
+Author: Marcus McCrea, 
+School: CHHS
+Course: Computer Programming 20
+
+*/
+
 package gettingstarted;
 
 import com.phidget22.*;

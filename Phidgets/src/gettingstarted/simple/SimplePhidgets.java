@@ -1,3 +1,16 @@
+/*
+
+Program: SimplePhidgets.java          Last Date of this Revision: March 31, 2026
+
+Purpose: this is all of the simple phidgets projects in one simple file so you can choose which one to try
+
+Author: Marcus McCrea, 
+School: CHHS
+Course: Computer Programming 20
+
+*/
+
+
 package gettingstarted.simple;
 
 import gettingstarted.PhidgetManager;
@@ -25,19 +38,19 @@ public class SimplePhidgets {
             lastR = r;
             lastG = g;
 
-            // 🔴 cycle options
+            // cycle options
             if (rPress) {
                 option = (option + 1) % 4;
                 showMenu(option);
             }
 
-            // 🟢 select option
+            // select option
             if (gPress) {
                 runLesson(option);
                 showMenu();
             }
 
-            // 🔥 exit to main menu
+            //  exit to main menu
             if (r && g) return;
 
             Thread.sleep(150);
@@ -63,7 +76,7 @@ public class SimplePhidgets {
 
         switch (o) {
 
-            // ================= LESSON 1 =================
+            // Lesson 1
             case 0 -> {
                 for (int i = 0; i < 5; i++) {
                     PhidgetManager.greenLED.setState(true);
@@ -73,7 +86,7 @@ public class SimplePhidgets {
                 }
             }
 
-            // ================= LESSON 2 =================
+            // Lesson 2
             case 1 -> {
                 for (int i = 0; i < 30; i++) {
                     System.out.println(
@@ -84,7 +97,7 @@ public class SimplePhidgets {
                 }
             }
 
-            // ================= LESSON 3 =================
+            // Lesson 3
             case 2 -> {
                 for (int i = 0; i < 50; i++) {
 
@@ -95,12 +108,12 @@ public class SimplePhidgets {
                 }
             }
 
-            // ================= PRACTICE =================
+            // Prac
             case 3 -> tugOfWar();
         }
     }
 
-    // ================= TUG OF WAR =================
+    // Tug of War
 
     public static void tugOfWar() throws Exception {
 

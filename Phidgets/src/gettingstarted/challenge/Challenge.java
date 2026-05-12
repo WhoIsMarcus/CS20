@@ -1,3 +1,15 @@
+/*
+
+Program: Challage.java          Last Date of this Revision: March 31, 2026
+
+Purpose: this is for checking if the room temp is within the window of the set temp
+
+Author: Marcus McCrea, 
+School: CHHS
+Course: Computer Programming 20
+
+*/
+
 package gettingstarted.challenge;
 
 import gettingstarted.PhidgetManager;

@@ -1,3 +1,16 @@
+/*
+
+Program: AdvancedPhidgets.java          Last Date of this Revision: March 31, 2026
+
+Purpose: this is all of the advanced phidgets projects in one simple file so you can choose which one to try
+
+Author: Marcus McCrea, 
+School: CHHS
+Course: Computer Programming 20
+
+*/
+
+
 package gettingstarted.advanced;
 
 import gettingstarted.PhidgetManager;
